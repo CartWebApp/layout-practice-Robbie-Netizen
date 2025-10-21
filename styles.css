@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-image: url("/layout-01-assets/img11.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0px;
+    padding: 15px;
+    overflow: hidden;
+    background-color: #383E4C;
+    justify-content: center;
+}
+
+ul li {
+    padding: 5px 5px;
+}
+
+ul li a {
+    display: inline;
+    padding: 10px 15px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #646D7C;
+}
+
+ul li a:hover {
+    background-color: #49505F;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: 100px;
+    text-shadow: 2px 3px black;
+    padding: 0;
+}
+
+header p {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 1px black;
+}
+
+.set-of-one {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 60%;
+    justify-self: center;
+    padding: 10px;
+}
+
+.set-of-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 60vw;
+    justify-self: center;
+    padding: 10px;
+}
+
+.set-of-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 60vw;
+    justify-self: center;
+    padding: 10px;
+}
+
+.set-of-four {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 60vw;
+    justify-self: center;
+    padding: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: fill;
+    background-color: #f2f2f2;
+    margin: 20px;
+}
+
+.button-green {
+    background-color: #178A27;
+    color: white;
+}
+
+.button-red {
+    background-color: #852406;
+    color: white;
+}
+
+.button-blue {
+    background-color: #1686C1;
+    color: white;
+}
+
+.button-white {
+    background-color: #FFFFFF;
+    color: #6F6F6F;
+}
+
+[class^="button"] {
+    border-radius: 16px;   
+}
+
+.card h3 {
+    color: #666666;
+}
