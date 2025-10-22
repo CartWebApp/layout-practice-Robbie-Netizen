@@ -122,3 +122,24 @@ header p {
 .card h3 {
     color: #666666;
 }
+
+.set-of-three .card:nth-child(1) h3 {
+    color: #178A27;
+}
+
+.set-of-three .card:nth-child(2) h3 {
+    color: #1686C1;
+}
+
+.card *:not(img) {
+    padding: 0 10px 10px 10px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 50%;
+    align-self: center;
+}
