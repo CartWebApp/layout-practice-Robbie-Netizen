@@ -11,6 +11,28 @@ header {
     height: 50vh;
 }
 
+.services {
+    display: flex;
+    flex-flow: column;
+    background-image: url("/layout-01-assets/img13.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh / 3);
+    align-items: center;
+}
+
+.contact {
+    display: flex;
+    flex-flow: column;
+    background-image: url("/layout-01-assets/img14.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    align-items: center;
+}
+
 ul {
     display: flex;
     list-style-type: none;
@@ -47,6 +69,33 @@ h1 {
     padding: 0;
 }
 
+h2 {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin: 50px;
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+.services h2 {
+    text-shadow: 2px 3px #AAAAAA;
+}
+
+.services h2 ~ p {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    max-width: 60%;
+}
+
+.contact h2 {
+ text-shadow: 2px 3px #000000;
+}
+
+
 header p {
     text-align: center;
     color: white;
@@ -78,6 +127,12 @@ header p {
     padding: 10px;
 }
 
+.top-set {
+    display: grid;
+    grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
+
+}
+
 .set-of-four {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -89,10 +144,15 @@ header p {
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     width: fill;
     background-color: #f2f2f2;
     margin: 20px;
+}
+
+.card img {
+    top: 0px;
+    left: 0px;
 }
 
 .button-green {
@@ -115,10 +175,6 @@ header p {
     color: #6F6F6F;
 }
 
-[class^="button"] {
-    border-radius: 16px;   
-}
-
 .card h3 {
     color: #666666;
 }
@@ -136,10 +192,18 @@ header p {
 }
 
 button {
-    padding: 10px;
+    display: flex;
     margin: 10px;
     cursor: pointer;
     font-size: 16px;
-    width: 50%;
+    width: fit-content  ;
+    height: fit-content;
     align-self: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+}
+
+.button-white {
+    border: thin solid #cdcdcd;
 }
