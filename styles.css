@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: system-ui, 'Open Sans';
 }
 
 header {
@@ -31,6 +31,59 @@ header {
     background-position: center;
     height: 50vh;
     align-items: center;
+
+}
+
+.contact article {
+    background-color: #ffffff80;
+    backdrop-filter: blur(25px);
+    width: calc(100vw / 3);
+    margin: 25px;
+}
+
+.contact article h2 {
+    margin-bottom: 50px;
+}
+
+.contact article p {
+    padding: 15px;
+    text-align: center;
+}
+
+.contact form {
+    width : calc(100vw / 3);
+    display: grid;
+    grid-template: "name message" 1fr
+                   "email message" 1fr
+                   "subject message" 1fr
+                   ". send" 1fr / 1fr 1fr;
+    gap: 15px;
+}
+
+form input {
+    background-color: #ffffff80;
+    backdrop-filter: blur(25px);
+    border: none;
+}
+
+form [placeholder="Name"] {
+    grid-area: name;
+}
+
+form [placeholder="Email"] {
+    grid-area: email;
+}
+
+form [placeholder="Subject"] {
+    grid-area: subject;
+}
+
+form [placeholder="Your message here..."] {
+    grid-area: message;
+}
+
+form [value="Send"] {
+    grid-area: send;
 }
 
 ul {
