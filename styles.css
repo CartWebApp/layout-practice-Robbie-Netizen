@@ -9,6 +9,12 @@ header {
     background-size: cover;
     background-position: center;
     height: 50vh;
+    & p {
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        text-shadow: 2px 1px black;
+    }
 }
 
 .services {
@@ -31,59 +37,73 @@ header {
     background-position: center;
     height: 50vh;
     align-items: center;
+    & article {
+        background-color: #ffffff50;
+        backdrop-filter: blur(10px);
+        width: calc(100vw / 3);
+        margin: 25px;
+        border-radius: 5px;
+        & h2 {
+            margin-bottom: 50px;
+        }
+        & p {
+            padding: 15px;
+            text-align: center;
+        }
+    }
+    & form {
+        width : calc(100vw / 3);
+        display: grid;
+        grid-template: "name message" 1fr
+                       "email message" 1fr
+                       "subject message" 1fr
+                       ". send" 1fr / 1fr 1fr;
+        gap: 15px;
+    }
 
 }
 
-.contact article {
-    background-color: #ffffff80;
-    backdrop-filter: blur(25px);
-    width: calc(100vw / 3);
-    margin: 25px;
-}
-
-.contact article h2 {
-    margin-bottom: 50px;
-}
-
-.contact article p {
-    padding: 15px;
-    text-align: center;
-}
-
-.contact form {
-    width : calc(100vw / 3);
-    display: grid;
-    grid-template: "name message" 1fr
-                   "email message" 1fr
-                   "subject message" 1fr
-                   ". send" 1fr / 1fr 1fr;
-    gap: 15px;
-}
-
-form input {
-    background-color: #ffffff80;
-    backdrop-filter: blur(25px);
+form {
+    & input {
+    background-color: #ffffff50;
+    backdrop-filter: blur(10px);
     border: none;
-}
-
-form [placeholder="Name"] {
-    grid-area: name;
-}
-
-form [placeholder="Email"] {
-    grid-area: email;
-}
-
-form [placeholder="Subject"] {
+    color: #000000;
+    border-radius: 5px;
+    }
+    & [placeholder="Name"] {
+        grid-area: name;
+    }
+    & [placeholder="Email"] {
+        grid-area: email;
+    }
+    & [placeholder="Subject"] {
+        grid-area: subject;
+    }
+    & [placeholder="Subject"] {
     grid-area: subject;
+    }
+    & textarea {
+        grid-area: message;
+        background-color: #ffffff50;
+        backdrop-filter: blur(10px);
+        border: none;
+        color: #000000;
+        border-radius: 5px;
+    }
+    & [type="submit"] {
+        grid-area: send;
+        width: calc(100vw / 18);
+        background-color:#262628;
+        color: #ffffff;
+    }
+    & *::placeholder {
+        color: #000000;
+    }
 }
 
-form [placeholder="Your message here..."] {
-    grid-area: message;
-}
-
-form [value="Send"] {
-    grid-area: send;
+input[type="text"], textarea {
+    padding: 5px;
 }
 
 ul {
@@ -94,23 +114,20 @@ ul {
     overflow: hidden;
     background-color: #383E4C;
     justify-content: center;
-}
-
-ul li {
-    padding: 5px 5px;
-}
-
-ul li a {
-    display: inline;
-    padding: 10px 15px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border: 2px solid #646D7C;
-}
-
-ul li a:hover {
-    background-color: #49505F;
+    & li {
+        padding: 5px 5px;
+        & a {
+            display: inline;
+            padding: 10px 15px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #646D7C;
+        }
+        & a:hover {
+            background-color: #49505F;
+        }
+    }
 }
 
 h1 {
@@ -133,33 +150,43 @@ h2 {
 
 .services h2 {
     text-shadow: 2px 3px #AAAAAA;
-}
-
-.services h2 ~ p {
-    justify-self: center;
-    align-self: center;
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    max-width: 60%;
+    & ~ p {
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        max-width: 60%;
+    }
 }
 
 .contact h2 {
- text-shadow: 2px 3px #000000;
+    text-shadow: 2px 3px #000000;
 }
 
+footer{
+    & h2 {
+        color: #666666;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 30px;
+    }
+    & p {
+        color: #999999;
+        text-align: center;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 10x;
+    }
+}
 
-header p {
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    text-shadow: 2px 1px black;
+hr {
+    height: 1px;
+    background-color: #eeeeee;
 }
 
 .set-of-one {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    max-width: 60%;
+    width: 60vw;
     justify-self: center;
     padding: 10px;
 }
@@ -167,45 +194,59 @@ header p {
 .set-of-two {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    max-width: 60vw;
+    width: 60vw;
     justify-self: center;
     padding: 10px;
+    & h3 {
+        text-align: center;
+    }
 }
 
 .set-of-three {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    max-width: 60vw;
+    width: 60vw;
     justify-self: center;
     padding: 10px;
-}
-
-.top-set {
-    display: grid;
-    grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
-
+    & .card:nth-child(1) h3 {
+        color: #178A27;
+    }
+    & .card:nth-child(2) h3 {
+        color: #1686C1;    
+    }
 }
 
 .set-of-four {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    max-width: 60vw;
+    width: 60vw;
     justify-self: center;
     padding: 10px;
+    & h3 {
+        text-align: center;
+    }
 }
 
 .card {
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
     justify-content: flex-start;
     width: fill;
     background-color: #f2f2f2;
     margin: 20px;
-}
-
-.card img {
-    top: 0px;
-    left: 0px;
+    & img {
+        top: 0px;
+        left: 0px;
+    }
+    & *:not(img) {
+        padding: 0 10px 10px 10px;
+    }
+    & h3 {
+        color: #666666;
+    }
+    & p:last-of-type {
+        margin-bottom: auto;
+    }
 }
 
 .button-green {
@@ -226,37 +267,22 @@ header p {
 .button-white {
     background-color: #FFFFFF;
     color: #6F6F6F;
-}
-
-.card h3 {
-    color: #666666;
-}
-
-.set-of-three .card:nth-child(1) h3 {
-    color: #178A27;
-}
-
-.set-of-three .card:nth-child(2) h3 {
-    color: #1686C1;
-}
-
-.card *:not(img) {
-    padding: 0 10px 10px 10px;
+    border: thin solid #cdcdcd;
 }
 
 button {
-    display: flex;
     margin: 10px;
     cursor: pointer;
     font-size: 16px;
-    width: fit-content  ;
+    width: fit-content;
     height: fit-content;
     align-self: center;
-    justify-content: center;
     border: none;
     border-radius: 5px;
+    margin-top: auto;
+    padding: 5px;   
 }
 
-.button-white {
-    border: thin solid #cdcdcd;
+button::content{
+    align-self: flex-start;
 }
